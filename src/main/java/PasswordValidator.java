@@ -15,8 +15,8 @@ public class PasswordValidator {
                 .filter(line -> {
                     String word = line.substring(line.lastIndexOf(' ') + 1);
                     String letter = line.substring(line.indexOf(' ') + 1, line.indexOf(':'));
-                    Integer position1 = Integer.valueOf(line.substring(0, line.indexOf('-'))) - 1;
-                    Integer position2 = Integer.valueOf(line.substring(line.indexOf('-') + 1, line.indexOf(' '))) - 1;
+                    int position1 = Integer.parseInt(line.substring(0, line.indexOf('-'))) - 1;
+                    int position2 = Integer.parseInt(line.substring(line.indexOf('-') + 1, line.indexOf(' '))) - 1;
                     boolean firstMatch = String.valueOf(word.charAt(position1)).equals(letter);
                     boolean secondMatch = String.valueOf(word.charAt(position2)).equals(letter);
                     return firstMatch ^ secondMatch;
@@ -29,9 +29,9 @@ public class PasswordValidator {
                     .filter(line -> {
                         String word = line.substring(line.lastIndexOf(' '));
                         String letter = line.substring(line.indexOf(' ') + 1, line.indexOf(':'));
-                        Integer from = Integer.valueOf(line.substring(0, line.indexOf('-')));
-                        Integer to = Integer.valueOf(line.substring(line.indexOf('-') + 1, line.indexOf(' ')));
-                        Integer occurrences = word.length() - word.replaceAll(letter,"").length();
+                        int from = Integer.parseInt(line.substring(0, line.indexOf('-')));
+                        int to = Integer.parseInt(line.substring(line.indexOf('-') + 1, line.indexOf(' ')));
+                        int occurrences = word.length() - word.replaceAll(letter,"").length();
                         return from <= occurrences && occurrences <= to;
                     })
                     .count();
