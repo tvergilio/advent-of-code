@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class TwentyTwentyFinder {
     public static void main(String[] args) throws IOException {
-        Path source = Paths.get("D:\\projects\\advent-of-code\\target\\classes\\input");
+        Path source = Paths.get("target\\classes\\input");
         List<Integer> numbers = Files.lines(source).map(Integer::valueOf).collect(Collectors.toList());
         int answer = findProductOfThreeNumbers(numbers);
         System.out.println(answer);
