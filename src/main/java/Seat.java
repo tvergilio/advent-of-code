@@ -14,10 +14,10 @@ public class Seat {
     }
 
     public static long getYourSeat(Path source) throws IOException {
-        IntSummaryStatistics summaryStatistics = getAllSeats(source).summaryStatistics();
-        long max = summaryStatistics.getMax();
-        long min = summaryStatistics.getMin();
-        return max*(max+1)/2 - (min-1)*min/2 - summaryStatistics.getSum();
+        IntSummaryStatistics stats = getAllSeats(source).summaryStatistics();
+        long max = stats.getMax();
+        long min = stats.getMin();
+        return max*(max+1)/2 - (min-1)*min/2 - stats.getSum();
     }
 
     public static int getHighestSeat(Path source) throws IOException {
