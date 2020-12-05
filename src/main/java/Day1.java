@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Week1 {
+public class Day1 {
     public static void main(String[] args) throws IOException {
         Path source = Paths.get("target\\classes\\input");
         List<Integer> numbers = Files.lines(source).map(Integer::valueOf).collect(Collectors.toList());

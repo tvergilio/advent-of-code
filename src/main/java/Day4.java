@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Week3 {
+public class Day4 {
     private static String lineSeparator = System.lineSeparator();
     private static List<String> requiredFields = Arrays.asList("ecl", "pid", "eyr", "hcl", "byr", "iyr", "hgt");
 
